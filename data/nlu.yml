@@ -1,0 +1,211 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: ask_weather
+  examples: |
+    - weather
+    - weather is
+    - what is the weather right now
+    - what's the weather
+    - tell me the weather now
+    - current weather
+    - what the weather is?
+    - I want to know the weather
+    - can you tell me the weather right now
+    - can I know the weather at right now?
+    - How’s the weather?
+    - What do you think the weather looks like?
+
+- intent: weather_location
+  examples: |
+    - [colombo](city)
+    - [kandy](city)
+    - [gampaha](city)
+    - [nuwara eliya](city)
+    - [bandarawela](city)
+    - [matale](city)
+    - [anuradhapura](city)
+    - [badulla](city)
+    - [kaluthara](city)
+    - [katharagama](city)
+    - [london](city)
+    - [new york](city)
+    - [sydney](city)
+    - [paris](city)
+    - [stockholm](city)
+    - [berlin](city)
+    - [manhattan](city)
+    - [illinois](city)
+
+- intent: ask_specific_location_weather
+  examples: |
+    - [colombo](city) weather
+    - weather is at [bandarawela](city)
+    - what is the weather at [kandy](city) right now
+    - what's the weather at [anuradhapura](city)
+    - tell me the [paris](city) weather now
+    - current weather at [matale](city)
+    - what the weather at [sydney](city) is?
+    - I want to know the [manhattan](city) weather
+    - can you tell me the weather at [gampaha](city) right now
+    - can I know the weather at [illinois](city) right now?
+    - How’s the weather at [london](city)?
+
+- intent: ask_forecast_weather
+  examples: |
+    - Do I need to carry an [umbrella](item) [tomorrow](date)?
+    - How is the weather [tomorrow](date)?
+    - So, what will the weather be like [today](date)?
+    - Tell me, what is the weather like [today](date)?
+    - The forecast?
+    - What is the weather expected to be like?
+    - What is the weather forecast saying?
+    - What is the weather forecast [today](date)?
+    - What is the weather [today](date)?
+    - What’s the weather like [tomorrow](date)?
+    - What's the forecast like [tomorrow](date)?
+    - What's the forecast [tomorrow](date)?
+
+- intent: ask_forecast_weather_specific_location
+  examples: |
+    - Do I need to carry an [umbrella](item) [tomorrow](date) at [colombo](city)?
+    - So, what will the weather be like at [colombo](city) [today](date)?
+    - Tell me, what is the weather like at [colombo](city) [today](date)?
+    - The forecast at [colombo](city)?
+    - What is the weather expected at [colombo](city) to be like?
+    - What is the weather forecast saying at [colombo](city)?
+    - What is the weather forecast at [colombo](city) [today](date)?
+    - What is the weather at [colombo](city) [today](date)?
+    - What’s the weather like at [colombo](city) [tomorrow](date)?
+    - What's the forecast like at [colombo](city) [tomorrow](date)?
+    - What's the forecast at [colombo](city) [tomorrow](date)?
+    - How's the weather at [colombo](city) [tomorrow](date)?
+    - What's the weather [tomorrow](date) at [kandy](city)?
+    - What is the weather forecast at [nuwara eliya](city) [tomorrow](date)?
+
+- intent: ask_forecast_specific_weather_condition
+  examples: |
+    - How [cold](condition) is it going to get [tomorrow](date)?
+    - How [cold](condition) is it going to be [tomorrow](date)?
+    - How [hot](condition) is it going to get [tomorrow](date)?
+    - How [hot](condition) is it going to be [tomorrow](date)?
+    - How [humid](condition) is it going to get [tomorrow](date)?
+    - How [humid](condition) is it going to be [tomorrow](date)?
+    - How [rainy](condition) is it going to be [tomorrow](date)?
+    - How [rainy](condition) is it going to be [tomorrow](date)?
+    - Is it expected to [rain](condition) [tomorrow](date)?
+    - Is it expected to [snow](condition) [tomorrow](date)?
+    - Is it [windy](condition) [tomorrow](date)?
+    - What is the [humidity](condition) level [tomorrow](date)?
+    - What is the [temperature](condition) outside [tomorrow](date)?
+    - What is the [temperature](condition) [tomorrow](date)?
+    - What [temperature](condition) do you think it is for [tomorrow](date)?
+    - What’s the [temperature](condition) like [tomorrow](date)?
+    - What’s the [temperature](condition) [today](date)?
+    - What’s the [temperature](condition) [tomorrow](date)?
+
+- intent: ask_forecast_specific_weather_condition_with_location
+  examples: |
+    - How [cold](condition) is it going to get [tomorrow](date) at [colombo](city)?
+    - How [cold](condition) is it going to be [tomorrow](date) at [colombo](city)?
+    - How [hot](condition) is it going to get [tomorrow](date) at [colombo](city)?
+    - How [hot](condition) is it going to be [tomorrow](date) at [colombo](city)?
+    - How [humid](condition) is it going to get [tomorrow](date) at [colombo](city)?
+    - How [humid](condition) is it going to be [tomorrow](date) at [colombo](city)?
+    - How [rainy](condition) is it going to be [tomorrow](date) at [colombo](city)?
+    - How [rainy](condition) is it going to be [tomorrow](date) at [colombo](city)?
+    - Is it expected to [rain](condition) [tomorrow](date) at [colombo](city)?
+    - Is it expected to [snow](condition) [tomorrow](date) at [colombo](city)?
+    - Is it [windy](condition) [tomorrow](date) at [colombo](city)?
+    - What is the [humidity](condition) level at [colombo](city) [tomorrow](date)?
+    - What is the [temperature](condition) at [colombo](city) [tomorrow](date)?
+    - What [temperature](condition) do you think at [colombo](city) for [tomorrow](date)?
+    - What’s the [temperature](condition) like [tomorrow](date) at [colombo](city)?
+    - What’s the [temperature](condition) at [colombo](city) [today](date)?
+    - What’s the [temperature](condition) at [colombo](city) [tomorrow](date)?
+
+- intent: ask_package_upgrade
+  examples: |
+    - I want to upgrade my package
+    - package upgrade
+    - upgrade package
+    - how to upgrade my package
+    - upgrade my package
+    - can I upgrade my package
+    - I want to upgrade my package to [gold](package)
+    - upgrade package to [silver](package)
+    - package upgrade to [platinum](package)
+    - upgrade my package to [silver](package)
+
+- intent: phone_no_entry
+  examples: |
+    - my phone number is [0713038084](phone_no)
+    - my number [0714037780](phone_no)
+    - no is [0714129111](phone_no)
+    - my no is [0717502780](phone_no)
+    - [0716778410](phone_no)
+    - [0711542873](phone_no)
+    - [0715845219](phone_no)
+
+- intent: name_entry
+  examples: |
+    - my name is [Jyotsna](name)
+    - [Kamal](name)
+    - [Nimal](name)
+    - [Steve](name)
+    - [Saman](name)
+    - [Tharindu](name)
+    - [Erik](name)
+    - [Ravindu](name)
+    - [John Doe](name)
+    - [Donald Trump](name)
+    - [Kavindu Peiris](name)
+
+- intent: email_entry
+  examples: |
+    - my email is [jyotsnay24@gmail.com](email)
+    - [john.doe@yahoo.com](email)
+    - [sarahsmith@gmail.com](email)
+    - [mike.jones87@hotmail.com](email)
+    - [emily.wilson@outlook.com](email)
+    - [jasonbrown23@yahoo.com](email)
+    - [amanda.garcia@email.com](email)
+    - [robert.nguyen78@protonmail.com](email)
+    - [lisajohnson@icloud.com](email)
+    - [samuelbrown@live.com](email)
+    - [anna.miller@gmail.com](email)
+
+- intent: package_entry
+  examples: |
+    - [platinum](package)
+    - [silver](package)
+    - [gold](package)

@@ -1,0 +1,152 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_weather
+  - weather_location
+  - ask_specific_location_weather
+  - ask_forecast_weather
+  - ask_forecast_weather_specific_location
+  - ask_forecast_specific_weather_condition
+  - ask_forecast_specific_weather_condition_with_location
+  - ask_package_upgrade
+  - phone_no_entry
+  - name_entry
+  - email_entry
+  - package_entry
+
+actions:
+  - action_weather_tracker_1
+  - action_weather_tracker_2
+  - action_weather_forecast_1
+  - action_weather_forecast_2
+  - action_weather_forecast_3
+  - action_weather_forecast_4
+  - action_package_slots
+
+forms:
+  package_upgrade_form:
+    required_slots:
+      - name
+      - phone_no
+      - email
+      - package
+
+entities:
+  - city
+  - date
+  - item
+  - condition
+  - name
+  - phone_no
+  - email
+  - package
+
+slots:
+  city:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: city
+    influence_conversation: false
+
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+    influence_conversation: false
+
+  item:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: item
+    influence_conversation: false
+
+  condition:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: condition
+    influence_conversation: false
+  
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: name
+        conditions:
+        - active_loop: package_upgrade_form
+  
+  phone_no:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: phone_no
+        conditions:
+        - active_loop: package_upgrade_form
+
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: email
+        conditions:
+        - active_loop: package_upgrade_form
+
+  package:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: package
+        conditions:
+        - active_loop: package_upgrade_form
+
+responses:
+  utter_greet_and_help:
+  - text: "Hey! How can I help you?"
+
+  utter_ask_location:
+  - text: "What is your location?"
+  - text: "Can I know your location please?"
+  - text: "Where's the city are you looking for?"
+
+  utter_ask_name:
+  - text: "What is your name?"
+  - text: "Can I know your name?"
+  - text: "Give me your name please"
+
+  utter_ask_phone_no:
+  - text: "What's your phone number?"
+  - text: "Give me your phone number"
+
+  utter_ask_email:
+  - text: "What is your email"
+  - text: "Enter a valid email"
+
+  utter_ask_package:
+  - text: "What's the package you are going to upgrade?"
+  - text: "Please enter your package"
+  - text: "Which package you are willing to upgrade?"
+
+  # utter_user_confirmation:
+  # - text: "Are you sure that the given information is correct? (y/n)"
+
+  utter_submit:
+  - text: "Your package has been upgraded!"
+
+  utter_goodbye:
+  - text: "Bye Bye!"
+  - text: "See you again!"
+  - text: "glad to help you."
+  - text: "Bye! see you soon."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

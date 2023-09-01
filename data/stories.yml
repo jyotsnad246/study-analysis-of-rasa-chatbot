@@ -1,0 +1,96 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet_and_help
+
+- story: current weather path 1
+  steps:
+  - intent: ask_weather
+  - action: utter_ask_location
+  - intent: weather_location
+    entities:
+    - city: "colombo"
+    - city: "kandy"
+    - city: "nuwaraeliya"
+  - action: action_weather_tracker_1
+
+- story: current weather path 2
+  steps:
+  - intent: ask_specific_location_weather
+    entities:
+    - city: "colombo"
+    - city: "kandy"
+    - city: "nuwara eliya"
+  - action: action_weather_tracker_2
+
+- story: weather forecast path 1
+  steps:
+  - intent: ask_forecast_weather
+    entities:
+    - date: "tomorrow"
+    - date: "today"
+    - item: "umbrella"
+  - action: utter_ask_location
+  - intent: weather_location
+    entities:
+    - city: "colombo"
+    - city: "kandy"
+    - city: "nuwaraeliya"
+  - action: action_weather_forecast_1
+
+- story: weather forecast path 2
+  steps:
+  - intent: ask_forecast_weather_specific_location
+    entities:
+    - date: "tomorrow"
+    - date: "today"
+    - item: "umbrella"
+    - city: "colombo"
+    - city: "kandy"
+    - city: "nuwara eliya"
+  - action: action_weather_forecast_2
+
+- story: weather forecast path 3
+  steps:
+  - intent: ask_forecast_specific_weather_condition
+    entities:
+    - date: "tomorrow"
+    - date: "today"
+    - item: "umbrella"
+    - condition: "cold"
+    - condition: "hot"
+    - condition: "humid"
+    - condition: "rainy"
+    - condition: "snow"
+    - condition: "humidity"
+    - condition: "temperature"
+  - action: utter_ask_location
+  - intent: weather_location
+    entities:
+    - city: "colombo"
+    - city: "kandy"
+    - city: "nuwaraeliya"
+  - action: action_weather_forecast_3
+
+- story: weather forecast path 4
+  steps:
+  - intent: ask_forecast_specific_weather_condition_with_location
+    entities:
+    - date: "tomorrow"
+    - date: "today"
+    - item: "umbrella"
+    - city: "colombo"
+    - city: "kandy"
+    - city: "nuwara eliya"
+    - condition: "cold"
+    - condition: "hot"
+    - condition: "humid"
+    - condition: "rainy"
+    - condition: "snow"
+    - condition: "humidity"
+    - condition: "temperature"
+  - action: action_weather_forecast_4
